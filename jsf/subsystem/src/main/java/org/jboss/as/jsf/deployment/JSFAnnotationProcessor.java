@@ -112,7 +112,7 @@ public class JSFAnnotationProcessor implements DeploymentUnitProcessor {
                     try {
                         annotatedClass = classLoader.loadClass(className.toString());
                     } catch (ClassNotFoundException e) {
-                        throw new DeploymentUnitProcessingException(JSFLogger.ROOT_LOGGER.classLoadingFailed(className));
+                        throw new DeploymentUnitProcessingException(JSFLogger.ROOT_LOGGER.classLoadingFailed(className), e);
                     }
                     discoveredClasses.add(annotatedClass);
                 } else {
